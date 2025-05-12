@@ -17,8 +17,8 @@ services:
       - INFLUXDB_DATABASE=GarminStats
       - GARMINCONNECT_IS_CN=False # Set this to True if you are in mainland China or use Garmin-cn (Default False)
       #####################################################################################
-      # - GARMINCONNECT_EMAIL=your_garminconnect_email # optional, read the setup docs. (remove or comment out this line altogether if not used)
-      # - GARMINCONNECT_BASE64_PASSWORD=your_base64_encoded_garminconnect_password # optional, must be Base64 encoded, read setup docs. (remove or comment out this line altogether if not used)
+      - GARMINCONNECT_EMAIL=${GARMIN_USERNAME} # optional, read the setup docs. (remove or com
+      - GARMINCONNECT_BASE64_PASSWORD=${GARMIN_PASSWORD} # optional, must be Base64 encoded, read
       #####################################################################################
       # The following ENV variables are required only if you are using influxdb V3 (You won't have to set the above )
       #####################################################################################
@@ -30,9 +30,9 @@ services:
       #####################################################################################
       # - LOG_LEVEL=INFO # change to DEBUG to get DEBUG logs
       # - UPDATE_INTERVAL_SECONDS=300 # Default update check interval is set to 5 minutes
-      # - FETCH_ADVANCED_TRAINING_DATA=False # This enables fetching additional data : Training Readiness, Hill score and Endurance score as available when set to True
-      # - KEEP_FIT_FILES=False # Stores the FIT files (downloads and saves them) when set to True - read docs for more details
-      # - ALWAYS_PROCESS_FIT_FILES=False # Enables processing FIT files even if GPS data is not present in it when set to True, default False
+      - FETCH_ADVANCED_TRAINING_DATA=True # This enables fetching additional data : Training Readiness, Hill score and Endurance score as available when set to True
+      - KEEP_FIT_FILES=True # Stores the FIT files (downloads and saves them) when set to True - read docs for more details
+      - ALWAYS_PROCESS_FIT_FILES=True # Enables processing FIT files even if GPS data is not present in it when set to True, default False
       # - USER_TIMEZONE="" # Can hardcode user's timezone, fetches timezone automatically and dynamically on each run if set to empty (default) - Read docs
       # - INFLUXDB_ENDPOINT_IS_HTTP=True # Set this to False if you are using HTTPS for your influxdb connection (over the internet)
       # - FORCE_REPROCESS_ACTIVITIES=True # Enables re-processing of FIT files on iterative updates when set to True (default), setting to False may save processing time but known for skipping activities

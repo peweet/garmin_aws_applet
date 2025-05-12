@@ -1,1 +1,7 @@
 garminconnect-tokens/
+
+.env
+*.env
+config/*.env
+secrets/
+*.pem
