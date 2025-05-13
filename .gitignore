@@ -1,4 +1,5 @@
 garminconnect-tokens/
+.idea
 .env
 *.env
 config/*.env
